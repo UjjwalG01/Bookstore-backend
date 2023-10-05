@@ -31,7 +31,7 @@ app.use("/api/v1/categories", require("./app/v1/routes/route.category"));
 app.use(auth);
 app.use("/api/v1/cart", require("./app/v1/routes/route.cart"));
 
-// app.use(isAdmin)
+app.use(isAdmin)
 app.use("/api/v1/users", require("./app/v1/routes/route.user"));
 
 app.listen(PORT, () => {
