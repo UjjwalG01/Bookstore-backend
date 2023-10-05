@@ -13,15 +13,11 @@ const PORT = process.env.PORT || 5000;
 connectDB();
 app.use(express.json());
 app.use(
-  cors()
-  // {
-  //     origin: [
-  //         'http://localhost:3000',
-  //         'http://localhost:3001',
-  //     ],
-  //     methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  //     allowedHeaders: ['Content-Type', 'Authorization']
-  // }
+  cors( {
+      origin: ["http://localhost:3000", "https://store-my-book.onrender.com/"],
+      // methods: ['GET', 'POST', 'PUT', 'DELETE'],
+      allowedHeaders: ['Content-Type', 'Authorization']
+  })
 );
 app.use(fileUpload());
 app.use(express.static("public"));
